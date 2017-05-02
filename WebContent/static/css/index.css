@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 页面 */
+.index { position:relative; width:100%; height:34rem; background:url(../images/index-bg.png) no-repeat; background-size:100%;}
+.index-top { position:relative; width:100%; height:3.25rem; background:url(../images/index-top-bg.png) no-repeat; background-size:100%; margin-top:0.2rem;}
+.logo { position:absolute; left:0.54rem; top:0.2rem; width:2.75rem; height:0.83rem; background:url(../images/logo.png) no-repeat; background-size:100%; z-index:2;}
+.index-top-text { width:100%; height:0.65rem; background:url(../images/index-top-text.png) no-repeat; background-size:100%; }
+
+.index-gl {  position:relative; width:100%; height:12.8rem; }
+.index-gl-num { position:relative; width:100%; height:auto; text-align:center; z-index:3; }
+.index-gl-num b { display:inline-block; width:1.1rem; height:1.66rem;}
+.index-gl-num b.num0 { background:url(../images/num-0.png) no-repeat; background-size:100%;}
+.index-gl-num b.num1 { background:url(../images/num-1.png) no-repeat; background-size:100%;}
+.index-gl-num b.num2 { background:url(../images/num-2.png) no-repeat; background-size:100%;}
+.index-gl-num b.num3 { background:url(../images/num-3.png) no-repeat; background-size:100%;}
+.index-gl-num b.num4 { background:url(../images/num-4.png) no-repeat; background-size:100%;}
+
+
+.index-gl-gp {  position:absolute; left:0rem; bottom:0; width:100%; height:9.9rem; background:url(../images/index-gl-gp.png) no-repeat; background-size:100%;}
+.index-gl-gp a { position:absolute; bottom:0.5rem; left:50%; width:4rem; height:1.4rem; background:url(../images/btn-ks.png) no-repeat; background-size:100%; margin-left:-2rem;  }
+.index-gl-gp p { position:absolute; bottom:0rem; left:0; width:100%; height:0.5rem; line-height:0.5rem; font-size:0.35rem; color:#a14128; text-align:center; font-weight:bold;  }
+
+.index-gl-heart { position:absolute; top:-0.5rem; left:0; width:100%; height:9rem; z-index:1;  }
+.index-gl-heart li { position:absolute}
+.index-gl-heart li.heart-f1 { width:1rem; height:0.94rem; background:url(../images/heart-f1.png) no-repeat; background-size:100%;}
+.index-gl-heart li.heart-f2 { width:0.80rem; height:0.76rem; background:url(../images/heart-f2.png) no-repeat; background-size:100%;}
+.index-gl-heart li.heart-h1 { width:1.1rem; height:1.02rem; background:url(../images/heart-h1.png) no-repeat; background-size:100%;}
+.index-gl-heart li.heart-h2 { width:0.76rem; height:0.72rem; background:url(../images/heart-h2.png) no-repeat; background-size:100%;}
+.index-gl-heart li.heart-b1 { width:0.76rem; height:0.74rem; background:url(../images/heart-b1.png) no-repeat; background-size:100%;}
+.index-gl-heart li.wz1 { top:1rem; left:20%;}
+.index-gl-heart li.wz2 { top:2rem; left:50%;}
+.index-gl-heart li.wz3 { top:4rem; left:70%;}
+.index-gl-heart li.wz4 { top:3rem; left:45%;}
+.index-gl-heart li.wz5 { top:3rem; left:80%;}
+.index-gl-heart li.wz6 { top:1.7rem; left:65%;}
+.index-gl-heart li.wz7 { top:3rem; left:60%;}
+.index-gl-heart li.wz8 { top:3.9rem; left:35%;}
+.index-gl-heart li.wz9 { top:3.3rem; left:25%;}
+.index-gl-heart li.wz10 { top:1.4rem; left:40%;}
+.index-gl-heart li.wz11 { top:2.6rem; left:33%;}
+.index-gl-heart li.wz12 { top:4rem; left:48%;}
+.index-gl-heart li.wz13 { top:1.9rem; left:77%;}
+
+.index-jiao-icon { width:100%; height:auto;}
+.index-jiao-icon b { position:relative; bottom:0; display:block; width:0.46rem; height:0.43rem; background:url(../images/icon-jiao1.png) no-repeat; background-size:100%; margin:0 auto;  
+	animation: jiao1  1s infinite linear;
+    -webkit-animation: jiao1  1s infinite linear;
+   
+}
+@keyframes jiao1{
+	0% {bottom:0;}
+	25% {bottom:-0.05rem;}
+	50% {bottom:-0.1rem;}
+	75% { bottom:-0.15rem;}
+	100% { bottom:-0.2rem;}
+}
+
+
+
+.index-dhtx-btn { width:100%; height:auto; margin-top:0.5rem;}
+.index-dhtx-btn a { width:3.1rem; height:1.1rem;}
+.index-dhtx-btn a.index-dhtx-btn1 { background:url(../images/btn-dh.png) no-repeat; background-size:100%; margin-left:1.45rem;}
+.index-dhtx-btn a.index-dhtx-btn2 { background:url(../images/btn-tx.png) no-repeat; background-size:100%; margin-right:1.35rem;}
+
+.index-numzs-text { width:100%; height:auto; margin-top:0.8rem;}
+.index-numzs-text li { width:36%; height:auto; line-height:0.6rem; text-align:center; overflow:hidden; }
+.index-numzs-text li.hdgz { width:18%; border-bottom:1px solid #401f0f; margin:0 5%;}
+.index-numzs-text li a { font-size:0.42rem; color:#962806; }
+.index-numzs-text li p { font-size:0.42rem; color:#962806;}
+.index-numzs-text li p b { font-weight:normal;}
+
+.index-btn-more {  width:100%; height:auto; margin-top:1.2rem;}
+.index-btn-more a { display:block;  width:4.52rem; height:1.3rem; background:url(../images/btn-more.png) no-repeat; background-size:100%; margin:0 auto;}
+.index-btn-more p { width:100%; height:auto; line-height:0.8rem; font-size:0.4rem; color:#a14128; text-align:center;}
+.index-btn-more p b { font-weight:normal; }
+
+.index-peo { width:100%; height:auto; margin-top:0.7rem;}
+.index-peo h3 { width:100%; height:auto;  line-height:0.8rem; font-size:0.37rem; color:#853207; text-align:center; font-weight:bold; }
+.index-peo dl { width:8.4rem; height:1.8rem; margin:0 auto; overflow:hidden; }
+.index-peo dl.heightAuto { height:auto; max-height:5.2rem; overflow-x:hidden; overflow:auto;}
+.index-peo dl dd { width:1.28rem; height:1.28rem; margin:0.2rem; background:url(../images/index-peo-boxbg.png) no-repeat; background-size:100%; }
+.index-peo dl dd b { display:block; width:1.20rem; height:1.20rem; border-radius:50%; margin-left:0.04rem; }
+.index-peo dl dd b img{width:1.20rem; height:1.20rem; border-radius:50%;}
+.index-peo p { width:0.34rem; height:0.16rem; background:url(../images/icon-jiao2.png) no-repeat; background-size:100%; margin:0 auto;}
+
+.index-foot { position:absolute; bottom:0; left:0; width:100%; height:auto; background:#000;}
+.index-foot p  { width:100%; height:auto; line-height:1rem; font-size:0.4rem; color:#fff; text-align:center; font-weight:bold;}
+
+
+
+/******邀请好友助力*****/
+.invite {  width:100%; height:auto; }
+.invite-cont1 { position:relative; width:100%; height:9.9rem; background:url(../images/z-invite-cont1-bg.png) no-repeat; background-size:100%;}
+.invite-cont1 b { position:absolute; top:0; left:0;  width:100%; height:9.9rem; background:url(../images/z-invite-cont1-pic.png) no-repeat; background-size:100%;}
+
+.invite-cont2 { position:relative; width:100%; height:4.86rem; background:url(../images/z-invite-cont2-bg.png) no-repeat; background-size:100%; overflow:hidden;}
+.invite-cont2-pic1 { position:absolute; top:0.3rem;  width:100%; height:0.65rem; background:url(../images/z-invite-cont2-pic1.png) no-repeat; background-size:100%;  
+	animation: invitePic1  8s infinite linear;
+    -webkit-animation: invitePic1  8s infinite linear;
+}
+@keyframes invitePic1{
+	0% {right: -100%;}
+	25% {right: -50%;}
+	50% {right: 0%;}
+	75% { right: 50%}
+	100% { right:100%}
+}
+.invite-cont2-pic2 { position:absolute; top:1.8rem;  width:100%; height:0.65rem; background:url(../images/z-invite-cont2-pic2.png) no-repeat; background-size:100%; 
+	animation: invitePic2  7s infinite linear;
+    -webkit-animation: invitePic2  7s infinite linear;  
+}
+@keyframes invitePic2{
+	0% {right: -100%;}
+	25% {right: -50%;}
+	50% {right: 0%;}
+	75% { right: 50%}
+	100% { right:100%}
+}
+.invite-cont2-pic3 { position:absolute; top:3.2rem;  width:100%; height:0.65rem; background:url(../images/z-invite-cont2-pic3.png) no-repeat; background-size:100%; 
+	animation: invitePic3  9s infinite linear;
+    -webkit-animation: invitePic3  9s infinite linear; 
+}
+@keyframes invitePic3{
+	0% {right: -100%;}
+	25% {right: -50%;}
+	50% {right: 0%;}
+	75% { right: 50%}
+	100% { right:100%}
+}
+
+.invite-cont3 { position:relative; width:100%; height:10.24rem; background:url(../images/z-invite-cont3-bg.png) no-repeat; background-size:100%;}
+.invite-cont3-btn { width:100%; height:auto;}
+.invite-cont3-btn a { width:4rem; height:1.66rem; }
+.invite-cont3-btn1 { background:url(../images/z-invite-cont3-btn1.png) no-repeat; background-size:100%; margin-left:0.95rem;}
+.invite-cont3-btn2 { background:url(../images/z-invite-cont3-btn2.png) no-repeat; background-size:100%; margin-right:1rem;}
+
+
+
+/**公共弹窗**/
+.ggtc { display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:99;}
+.ggtc-bg { position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.6;}
+.ggtc-cont { position:absolute; top:50%; left:50%; width:8.1rem; height:9.7rem; background:url(../images/tc-cont-bg.png) no-repeat; background-size:100%; margin-top:-4.85rem; margin-left:-4.05rem;}
+
+.ggtc-cont-text { width:90%; height:5.5rem; margin:0 auto; margin-top:3rem; }
+.ggtc-cont-text p { width:100%; height:auto;  }
+.ggtc-cont-text p.pt10 { padding-top:0.1rem;}
+.ggtc-cont-text p.pt20 { padding-top:0.2rem;}
+.ggtc-cont-text p.pt30 { padding-top:0.3rem;}
+.ggtc-cont-text p.pt40 { padding-top:0.4rem;}
+.ggtc-cont-text p.pt50 { padding-top:0.5rem;}
+.ggtc-cont-text p.pt60 { padding-top:0.6rem;}
+.ggtc-cont-text p.pt70 { padding-top:0.7rem;}
+.ggtc-cont-text p.pt80 { padding-top:0.8rem;}
+.ggtc-cont-text p.pt90 { padding-top:0.9rem;}
+.ggtc-cont-text p.pt100 { padding-top:1rem;}
+.ggtc-cont-text p.pt150 { padding-top:1.5rem;}
+.ggtc-cont-text p.pt180 { padding-top:1.8rem;}
+.ggtc-cont-text p.pt280 { padding-top:2.8rem;}
+
+.ggtc-cont-text p.text30 { line-height:0.45rem; font-size:0.30rem; color:#fff; text-align:center;}
+.ggtc-cont-text p.text32 { line-height:0.5rem; font-size:0.32rem; color:#fff; text-align:center;}
+.ggtc-cont-text p.text46 { line-height:0.52rem; font-size:0.46rem; color:#fff; text-align:center;}
+.ggtc-cont-text p.text40 { line-height:0.55rem; font-size:0.40rem; color:#fff; text-align:center;}
+.ggtc-cont-text p.text50 { line-height:0.75rem; font-size:0.50rem; color:#fff; text-align:center;}
+.ggtc-cont-text p.text55 { line-height:1rem; font-size:0.55rem; color:#fff; text-align:center;}
+.ggtc-cont-text p.text65 { line-height:1rem; font-size:0.65rem; color:#fff; text-align:center;}
+.ggtc-cont-text p.text100 { line-height:1.8rem; font-size:01rem; color:#fff; text-align:center;}
+
+.ggtc-inp { position:relative; width:5.8rem; height:1.1rem; background:url(../images/tc-input-bg.png) no-repeat; background-size:100%; margin:0 auto; }
+.ggtc-inp input { position:absolute; top:0.3rem; left:1.7rem; width:3.9rem; height:0.55rem; line-height:0.55rem; font-size:0.4rem; color:#666; }
+
+.ggtc-cont-text span { display:block; width:3.15rem; height:3.15rem; background-size:100%; margin:0 auto; margin-top:0.2rem;}
+.ggtc-btn1 { position:absolute; bottom:0rem; left:50%; width:1.6rem; height:1.4rem; background:url(../images/tc-cont-btn-ok.png) no-repeat; background-size:100%; margin-left:-0.8rem;}
+.ggtc-btn2 { position:absolute; bottom:0.2rem; left:50%; width:3.45rem; height:1rem; background:url(../images/tc-cont-btn-qr.png) no-repeat; background-size:100%; margin-left:-1.73rem;}
+.ggtc-btn3 { position:absolute; bottom:0.2rem; left:50%; width:3.45rem; height:1rem; background:url(../images/tc-cont-btn-wyys.png) no-repeat; background-size:100%; margin-left:-1.73rem;}
+.ggtc-btn4 { position:absolute; bottom:0.2rem; left:50%; width:3.45rem; height:1rem; background:url(../images/tc-cont-btn-more.png) no-repeat; background-size:100%; margin-left:-1.73rem;}
+.ggtc-btn5 { position:absolute; bottom:0.2rem; left:50%; width:3.45rem; height:1rem; background:url(../images/tc-cont-btn-qr.png) no-repeat; background-size:100%; margin-left:-1.73rem;}
+
+
+.ggtc-account-btn { width:100%; height:auto; margin-top: 0.3rem;}
+.ggtc-account-btn .n_no {margin-left:1rem; width:2.2rem; height:0.65rem; line-height:0.65rem; background:url(../images/n_no.png) no-repeat; background-size:100%; font-size:0.3rem; color:#fff; text-align:center; font-weight:normal; }
+.ggtc-account-btn .y_no {margin-right:1rem; width:2.2rem; height:0.65rem; line-height:0.65rem; background:url(../images/y_no.png) no-repeat; background-size:100%; font-size:0.3rem; color:#fff; text-align:center; font-weight:normal; }
+.ggtc .ggtc-account-btn .n_yes {background:url(../images/n_yes.png) no-repeat;background-size:100%;}
+.ggtc .ggtc-account-btn .y_yes {background:url(../images/y_yes.png) no-repeat;background-size:100%;}
+/*******活动规则  弹窗******/
+.ggtc-hdgzcont { position:absolute; top:50%; left:50%; width:8.6rem; height:17rem; background:url(../images/tc-hdgzcont-bg.png) no-repeat; background-size:100%; margin-top:-8.5rem; margin-left:-4.3rem;}
+.ggtc-hdgz-text { width:6.8rem; height:auto; margin:0 auto; margin-top:3.2rem;}
+.ggtc-hdgz-text h3 { width:100%; height:auto; line-height:1.5rem; font-size:0.68rem; color:#fff; text-align:center;}
+.ggtc-hdgz-text p { width:100%; height:auto; line-height:0.65rem; font-size:0.42rem; color:#fff; }
+
+
+/********分享遮罩***********/
+.mask { display:none; position:fixed;opacity:0.9;z-index:99; top:0; left:0; width:100%; height:100%; background:url(../images/fxzz-pic.png) no-repeat; background-size:100%; z-index:99;background-color: #000; }
+
+
+/***游戏时间***/
+.gameTime { position:relative; width:100%; height:19.2rem; background:url(../images/gameTime-bg.jpg) no-repeat; background-size:100%;}
+.gameTime-peo { position:absolute; top:0.9rem; left:1rem; width:1.62rem; height:1.62rem; background:url(../images/peo-icon.png) no-repeat; background-size:100%;}
+.gameTime-gl-heart {  width:100%; height:16rem;  }
+.gameTime-gl-p { position:absolute; bottom:0; left:0; width:100%; height:3.4rem; background:url(../images/gameTime-glp.png) no-repeat; background-size:100%;}
+.gameTime-gl-gt { position:absolute; bottom:0; left:0; width:100%; height:3.4rem;  z-index:1;}
+.gameTime-gl-gt b { position:absolute; bottom:0; left:1rem; width:2.7rem; height:2.1rem; background:url(../images/gameTime-gl-gt.png) no-repeat; background-size:100%; }
+
+.gameTime-end { position:fixed; top:50%; left:50%; width:5.7rem; height:5.2rem; background:url(../images/gameTime-end.png) no-repeat; background-size:100%; margin-top:-4.6rem; margin-left:-2.9rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+

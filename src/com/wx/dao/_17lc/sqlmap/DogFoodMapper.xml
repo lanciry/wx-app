@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dogfood">
+    <resultMap type="DogfoodAssistance" id="assistanceMap">
+        <id property="id" column="id" javaType="java.lang.Long"/>  
+        <result property="inviterOpenid" column="inviter_openid"/>  
+        <result property="assistorOpenid" column="assistor_openid"/>
+        <result property="assistorNickname" column="assistor_nickname"/>
+        <result property="assistorHeadimg" column="assistor_headimg"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+    
+    <resultMap type="DogfoodProducing" id="numForDayMap">
+        <result property="countForDay" column="count"/>
+        <result property="lastDate" column="last_date"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+    
+    <resultMap type="DogfoodQrcode" id="dogfoodQrcode">
+        <result property="openid" column="openid"/>
+        <result property="ticket" column="ticket"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+    
+    <!-- 更新所有未兑换狗粮状态为已兑换 -->
+    <update id="updateConversionStatus" parameterType="String">
+        update dogfood_producing 
+        set is_convert = 1
+        where is_convert=0  and  openid = #{openid}
+    </update>
+    
+    <!-- 插入狗粮兑换记录 -->
+    <insert id="insertConversionRecord" parameterType="DogfoodConversion">
+        insert into dogfood_conversion (openid,red_amount,is_cash,create_time)
+        values (#{openid},#{redAmount},#{isCash},#{createTime})
+    </insert>
+    
+    <!-- 获取提现人不是本次提现提现手机号码的记录 -->
+    <select id="getWithdrawOfOpenid" parameterType="DogfoodWithdraw" resultType="Integer" >
+       select count(*) from dogfood_withdraw 
+       where status= 1 and mobile != #{mobile} and openid = #{openid}
+    </select>
+    <!-- 获取提现手机号码不是本次提现人的记录 -->
+    <select id="getWithdrawOfMobile" parameterType="DogfoodWithdraw" resultType="Integer" >
+       select count(*) from dogfood_withdraw 
+       where status= 1 and mobile = #{mobile} and openid != #{openid}
+    </select>
+    
+    <!-- 更新所有未提现数据为已提现 -->
+    <update id="updateCashStatus" parameterType="String">
+        update dogfood_conversion 
+        set is_cash = 1,cash_time = now()
+        where is_cash=0  and  openid = #{openid}
+    </update>
+    
+    <!-- 插入提现记录 -->
+    <insert id="insertWithdraw" parameterType="DogfoodWithdraw">
+        insert into dogfood_withdraw (openid,amount,mobile,order_id,message,create_time)
+        values (#{openid},#{amount},#{mobile},#{orderId},#{message},#{createTime})
+    </insert>
+    
+    <!-- 更新提现记录 -->
+    <update id="updateWithdraw" parameterType="DogfoodWithdraw">
+        update dogfood_withdraw 
+        set status = #{status},message = #{message}
+        where  openid = #{openid} and order_id = #{orderId}
+    </update>
+    
+    <!-- 插入刷狗粮数据 -->
+    <insert id="insertProducing" parameterType="DogfoodProducing">
+        insert into dogfood_producing (openid,number,is_convert,create_time)
+        values (#{openid},#{number},#{isConvert},#{createTime})
+    </insert>
+    
+    <!-- 根据条件查询狗粮总数量 -->
+    <select id="sumDodFood" parameterType="DogfoodProducing" resultType="Integer" >
+       select sum(number) FROM dogfood_producing
+       <where>
+            <trim prefixOverrides="and">
+                <if test="isConvert !=null">
+                    and is_convert = #{isConvert}
+                </if>
+                <if test="openid !=null and openid != ''">
+                    and openid = #{openid}
+                </if>
+            </trim>
+        </where>
+    </select>
+    
+    <!-- 根据条件查询红包总金额 -->
+    <select id="sumRedAmount" parameterType="DogfoodConversion" resultType="BigDecimal" >
+       select sum(red_amount) FROM dogfood_conversion
+       <where>
+            <trim prefixOverrides="and">
+                <if test="isCash !=null">
+                    and is_cash = #{isCash}
+                </if>
+                <if test="openid !=null and openid != ''">
+                    and openid = #{openid}
+                </if>
+            </trim>
+        </where>
+    </select>
+    
+    <!-- 获取助力好友列表 -->
+    <select id="getAssistanceList" parameterType="String" resultMap="assistanceMap" >
+       select * from dogfood_assistance where inviter_openid = #{openid}
+    </select>
+    
+    <!-- 获取用户参与活动的天数,最后一天刷狗粮的时间 -->
+    <select id="countNumForDay" parameterType="String" resultMap="numForDayMap" >
+       select count(*) as count,max(t.create_time) as last_date from (select DATE_FORMAT(create_time,'%Y-%m-%d') as create_time from dogfood_producing where openid =#{openid} 
+       group by DATE_FORMAT(create_time,'%Y-%m-%d')) t
+    </select>
+    
+    <!-- 根据条件查询刷狗粮的次数 -->
+    <select id="countNum" parameterType="DogfoodProducing" resultType="Integer" >
+       select count(*) FROM dogfood_producing
+       <where>
+            <trim prefixOverrides="and">
+                <if test="openid !=null and openid != ''">
+                    and openid = #{openid}
+                </if>
+                <if test="beginTime !=null and endTime != null">
+                    and (create_time between #{beginTime} and #{endTime})
+                </if>
+            </trim>
+        </where>
+    </select>
+    
+    <!-- 根据条件查询当天刷狗粮的次数 -->
+    <select id="countNumEveryDay" parameterType="DogfoodProducing" resultMap="numForDayMap" >
+       select count(*) as count,DATE_FORMAT(create_time,'%Y-%m-%d') as create_time from dogfood_producing where openid = #{openid}
+       group by DATE_FORMAT(create_time,'%Y-%m-%d') order by DATE_FORMAT(create_time,'%Y-%m-%d') asc
+    </select>
+    
+    <!-- 判断用户是否给其他人助力过 -->
+    <select id="getAssistanceNumByOpenid" parameterType="String" resultType="Long" >
+       SELECT COUNT(*) FROM dogfood_assistance WHERE assistor_openid = #{openid}
+    </select>
+    
+    <!-- 保存助力记录 -->
+    <insert id="saveAssistance" parameterType="DogfoodAssistance" >
+        insert into dogfood_assistance (inviter_openid, assistor_openid, assistor_nickname, assistor_headimg, create_time)
+        values (#{inviterOpenid}, #{assistorOpenid}, #{assistorNickname}, #{assistorHeadimg}, now())
+    </insert>
+    
+    <!-- 保存带有OpenID参数的的ticket -->
+    <insert id="saveQrcode" parameterType="DogfoodQrcode">
+        insert into dogfood_qrcode (openid, ticket, create_time)
+        values (#{openid}, #{ticket}, now())
+    </insert>
+    
+    <select id="getQrcodeByOpenid" parameterType="String" resultMap="dogfoodQrcode" >
+       SELECT * FROM dogfood_qrcode WHERE openid = #{openid}
+    </select>
+    
+    <!-- 根据订单号查询提现记录 -->
+    <select id="findWithdrawByOrderId" parameterType="String" resultType="DogfoodWithdraw" >
+       SELECT * FROM dogfood_withdraw WHERE order_id = #{orderId}
+    </select>
+    
+    <!-- 回调通知更新提现记录 -->
+    <update id="updateWithdrawForNotify" parameterType="DogfoodWithdraw">
+        update dogfood_withdraw 
+        set status = #{status},message = #{message},mobile = #{mobile}
+        where  id = #{id}
+    </update>
+    
+    <!-- 查询当天提现次数 -->
+    <select id="countWithdrawNum" parameterType="DogfoodWithdraw" resultType="Integer" >
+       select count(*) FROM dogfood_withdraw
+       where openid = #{openid} and (create_time between #{beginTime} and #{endTime})
+       and status = 1
+    </select>
+</mapper>
