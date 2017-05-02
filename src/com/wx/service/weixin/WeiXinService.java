@@ -67,7 +67,7 @@ public class WeiXinService
 //					textMessage.setFromUserName(toUserName);
 //					textMessage.setCreateTime(new Date().getTime());
 //					textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
-//					textMessage.setContent("点击以下链接，开启快乐财富之旅吧！[爱心]\n<a href='www.17lc.com/common/member/reg?invite=cmVnX2ludml0ZTEzMzIxMTYyNDQw'>www.17lc.com/common/member/reg?invite=cmVnX2ludml0ZTEzMzIxMTYyNDQw</a>");
+//					textMessage.setContent("点击以下链接，开启快乐财富之旅吧！[爱心]\n<a href='xxx'>xxxxxx</a>");
 				    
 				    NewsMessageResp resp = new NewsMessageResp();
                     resp.setToUserName(fromUserName);
@@ -80,8 +80,8 @@ public class WeiXinService
                     Article art = new Article();
                     art.setTitle("快乐理财 停不下来！玩游戏赢百万体验金！");
                     art.setDescription("别说我们土豪，我们只是舍得花钱~");
-                    art.setPicUrl("http://mmbiz.qpic.cn/mmbiz_png/loPxBHicpov01haMZY55M59F2qpLRERvycoIgQ4M0EHk3mG9ULCue2GJXjlE2L413aH8iblxdJ88lZmuYEIRibLyQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1");
-                    art.setUrl("http://mp.weixin.qq.com/s/_xySoq9nhluJodKxbWW-RQ");
+                    art.setPicUrl("xxxxx");
+                    art.setUrl("xxxxx");
                     articles.add(art);
                     resp.setArticles(articles);
                     respMessage = MessageUtil.newsMessageToXml(resp);
@@ -109,7 +109,7 @@ public class WeiXinService
 						Long count = dogFoodService.getAssistanceNumByOpenid(fromUserName);
 						if(count > 0){
 							// 已经助力
-							textMessage.setContent("欢迎关注“一起理财”\n央企控股，安全合规！\n点击【登录】，给你稳稳幸福！[爱心]\n\n【福利游戏】，壕礼送不停！\n不要错过哦！[胜利]");
+							textMessage.setContent("xxxxx");
 						}else{
 							JSONObject jsonObject = WeixinUtil.getUserInfo(fromUserName);
 							DogfoodAssistance dogfoodAssistance = new DogfoodAssistance();
@@ -131,7 +131,7 @@ public class WeiXinService
 						}
 					} else {// 订阅
 					    //第三个服务会推送，此处不推送
-						//textMessage.setContent("欢迎关注“一起理财”\n央企控股，安全合规！\n点击【登录】，给你稳稳幸福！[爱心]\n\n【福利游戏】，壕礼送不停！\n不要错过哦！[胜利]");
+						//textMessage.setContent("xxxxx");
 					}
 					
 					respMessage = MessageUtil.textMessageToXml(textMessage);
@@ -151,23 +151,23 @@ public class WeiXinService
 //					if("10".equals(eventKey)){//行业咨询
 //						art.setTitle("房地产税法正式进入全国人大立法规划");
 //						art.setDescription("社会一直热议的房地产税终于有了实质性动向。最新调整过的十二届全国人大常委会立法规划本周向社会公布，包括房地产");
-//						art.setPicUrl("http://wx.dxzcgl.com/static/images/hangyezixun_title.jpg");
-//						art.setUrl("http://mp.weixin.qq.com/s?__biz=MzA5MzgwMzI5Mw==&mid=211215647&idx=1&sn=fe1d01913094608c21b7b68e7e8ed6d9&scene=18#wechat_redirect");
+//						art.setPicUrl("xxxx");
+//						art.setUrl("xxxx");
 //					} else if ("20".equals(eventKey)) {//企业动态
 //						art.setTitle("鼎鑫资产--葫芦岛分公司培训进行中");
 //						art.setDescription("通过此次培训，葫芦岛分公司同事对鼎鑫资产企业文化有了新的认识，同时也加深了对企业产品的了解。");
-//						art.setPicUrl("http://wx.dxzcgl.com/static/images/qiyedongtai_title.jpg");
-//						art.setUrl("http://mp.weixin.qq.com/s?__biz=MzA5MzgwMzI5Mw==&mid=210708590&idx=1&sn=098c025ebbed94bfdccf1be1419d31b4&scene=18#wechat_redirect");
+//						art.setPicUrl("xxxx");
+//						art.setUrl("xxxx");
 //					} else if ("30".equals(eventKey)) {//鼎鑫资产
 //						art.setTitle("鼎鑫（北京）资产管理有限责任公司");
 //						art.setDescription("鼎鑫（北京）资产管理有限责任公司主要服务于金融机构，非金融机构和自然人主体，对于客户的融资需求和理财意愿能够提供快捷便利、资金安全、风险可控、专业、合法的金融服务。");
-//						art.setPicUrl("http://wx.dxzcgl.com/static/images/dingxinzichan_title.jpg");
-//						art.setUrl("http://mp.weixin.qq.com/s?__biz=MzA5MzgwMzI5Mw==&mid=210706415&idx=1&sn=87e209c3492eb6867c3f3da15e860ebf&scene=18#wechat_redirect");
+//						art.setPicUrl("xxxxx");
+//						art.setUrl("xxxx");
 //					} else if ("40".equals(eventKey)) {//首付贷
 //						art.setTitle("鼎鑫资产---消费信用贷");
 //						art.setDescription("“首付贷产品”是通过我公司与湖北消费金融公司合作推广的纯信用类贷款产品。现面向华北地区推广，为合作机构提供年化14%的资金成本，与地方资质与信誉较好开发商合作帮助其快速去化房源，更快的完成地方去库存的目标。");
-//						art.setPicUrl("http://wx.dxzcgl.com/static/images/shoufudai_title.jpg");
-//						art.setUrl("http://mp.weixin.qq.com/s?__biz=MzA5MzgwMzI5Mw==&mid=402384185&idx=1&sn=49f5245b1f3e4234a28faa13db700ce1&scene=18#wechat_redirect");
+//						art.setPicUrl("xxxx");
+//						art.setUrl("xxxxxx");
 //					}
 					
 					articles.add(art);
@@ -179,7 +179,7 @@ public class WeiXinService
 					textMessage.setFromUserName(toUserName);
 					textMessage.setCreateTime(new Date().getTime());
 					textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
-					textMessage.setContent("欢迎关注“一起理财”\n央企控股，安全合规！\n点击【登录】，给你稳稳幸福！[爱心]\n\n【福利游戏】，壕礼送不停！\n不要错过哦！[胜利]");
+					textMessage.setContent("xxxxxxx");
 					
 					respMessage = MessageUtil.textMessageToXml(textMessage);
 				}

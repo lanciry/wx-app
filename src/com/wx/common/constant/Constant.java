@@ -10,7 +10,7 @@ import com.wx.util.ResourceUtil;
 public class Constant
 {
 	//微信请求签名token
-	public static final String SIGN_TOKEN = "yiqilicaizc";
+	public static final String SIGN_TOKEN = "xxxxxx";
 	//微信访问地址
 	public static final String WX_HOST = ResourceUtil.getProPerties("wx_host");
 	//微信应用ID

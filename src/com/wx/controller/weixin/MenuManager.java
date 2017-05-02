@@ -108,12 +108,12 @@ public class MenuManager
         CommonButton btn100 = new CommonButton();
         btn100.setName("分享赚");
         btn100.setType("view");
-        btn100.setUrl("http://www.17lc.com/wap/spread/mySpread");
+        btn100.setUrl("");
         
         CommonButton btn200 = new CommonButton();
         btn200.setName("收益+");
         btn200.setType("view");
-        btn200.setUrl("http://www.17lc.com/wap/yiqilicai/coupon");
+        btn200.setUrl("");
         
         ComplexButton mainBtn1 = new ComplexButton();
         mainBtn1.setName("★先登录");
@@ -122,7 +122,7 @@ public class MenuManager
         CommonButton btn700 = new CommonButton();
         btn700.setName("带球过人抢排名");
         btn700.setType("view");
-        btn700.setUrl("https://hd.faisco.cn/13158601/11/load.html?style=38");
+        btn700.setUrl("");
         
         CommonButton btn800 = new CommonButton();
         btn800.setName("刷狗粮赚体验金");
@@ -137,22 +137,22 @@ public class MenuManager
         CommonButton btn300 = new CommonButton();
         btn300.setName("安全第一");
         btn300.setType("view");
-        btn300.setUrl("http://www.17lc.com/wap/help/safebz");
+        btn300.setUrl("");
         
         CommonButton btn400 = new CommonButton();
         btn400.setName("关于我们");
         btn400.setType("view");
-        btn400.setUrl("http://www.17lc.com/wap/about/intro");
+        btn400.setUrl("");
         
         CommonButton btn500 = new CommonButton();
         btn500.setName("官方公告");
         btn500.setType("view");
-        btn500.setUrl("http://www.17lc.com/wap/articles/articleslist#?id=155");
+        btn500.setUrl("");
         
         CommonButton btn600 = new CommonButton();
         btn600.setName("帮助中心");
         btn600.setType("view");
-        btn600.setUrl("http://www.17lc.com/wap/help/index");
+        btn600.setUrl("");
         
         ComplexButton mainBtn3 = new ComplexButton();
         mainBtn3.setName("安全靠谱");
